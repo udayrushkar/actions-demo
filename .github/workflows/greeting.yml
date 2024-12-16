@@ -6,7 +6,9 @@ jobs:
     steps:
       - name: Hello
         run: echo "Hello, World!"
-      - name: Install Node
-        run: sudo apt install nodejs
+      - name: Install NVM
+        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+      - name: Install Node Through NVM
+        run : nvm install node
       - name: Print Node Version
         run: node -v
