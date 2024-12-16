@@ -1,5 +1,7 @@
 name: Greeting
-on: [push, workflow_dispatch]
+on: 
+  workflow_dispatch: 
+
 jobs:
   greeting:
     runs-on: ubuntu-latest
@@ -16,9 +18,4 @@ jobs:
           node-version: 22.x
       - name: Print Node Version
         run: node -v
-  Clone_repo:
-    needs: install_node
-    runs-on: ubuntu-latest
-    steps:
-    - name: Clone A Repo From URL
-      run: git clone https://github.com/${{github.repository}}.git
+  
