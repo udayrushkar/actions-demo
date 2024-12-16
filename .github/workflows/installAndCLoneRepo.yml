@@ -1,0 +1,25 @@
+name: clone_&_build_application;
+on: [push, workflow_dispatch]
+jobs:
+  install-node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Instal node with Market place packge
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - name: Print Node Version
+        run: node -v
+      
+  test-build:
+    needs: install-node
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone A Repo From URL
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm i
+      - name: Build Application
+        run: npm run build
+      - name: Test Application
+        run: npm run test
