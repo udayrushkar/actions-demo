@@ -7,6 +7,6 @@ jobs:
       - name: Hello
         run: echo "Hello, World!"
       - name: Instal node with nvm
-        run : nvm install node
+        run : nvm install latest
       - name: Print Node Version
         run: node -v
