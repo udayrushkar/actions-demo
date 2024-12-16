@@ -8,5 +8,7 @@ jobs:
         run: echo "Hello, World!"
       - name: Instal node with Market place packge
         uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
       - name: Print Node Version
         run: node -v
