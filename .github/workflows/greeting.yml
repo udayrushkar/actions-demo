@@ -6,9 +6,13 @@ jobs:
     steps:
       - name: Hello
         run: echo "Hello, World!"
+      - name : Update package 
+        run : sudo apt upgrade -y
+      - name : Install CURL
+        run : sudo apt install curl -y
       - name: Install NVM
-        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
       - name: Install Node Through NVM
-        run : nvm install node
+        run : nvm install --lts
       - name: Print Node Version
         run: node -v
