@@ -6,6 +6,10 @@ jobs:
     steps:
       - name: Hello
         run: echo "Hello, World!"
+  installNode:
+    needs: greeting
+    runs-on: ubuntu-latest
+    steps:
       - name: Instal node with Market place packge
         uses: actions/setup-node@v4
         with:
