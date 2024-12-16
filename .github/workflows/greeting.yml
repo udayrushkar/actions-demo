@@ -1,12 +1,12 @@
 name: Greeting
-on: push
+on: [push, workflow_dispatch]
 jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
       - name: Hello
         run: echo "Hello, World!"
-  installNode:
+  install_node:
     needs: greeting
     runs-on: ubuntu-latest
     steps:
@@ -16,3 +16,9 @@ jobs:
           node-version: 22.x
       - name: Print Node Version
         run: node -v
+  Clone_repo:
+    needs: install_node
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone A Repo From URL
+      run: git clone https://github.com/${{github.repository}}.git
