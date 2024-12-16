@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Hello
         run: echo "Hello, World!"
-      - name: Instal node with nvm
-        run : nvm install latest
+      - name: Instal node with Market place packge
+        uses: actions/setup-node@v4
       - name: Print Node Version
         run: node -v
