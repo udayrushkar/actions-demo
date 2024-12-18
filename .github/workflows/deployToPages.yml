@@ -1,4 +1,4 @@
-name: Deploye to Pages
+name: Deploy to Pages
 on: [workflow_dispatch]
 jobs:
   install-node:
@@ -34,8 +34,8 @@ jobs:
         name: github-pages
         url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Download Build Artifact
-        uses: actions/download-artifact@v4
+      - name: Deploye Artifacts to pages
+        uses: actions/deploy-pages@v4
         id: deployment
         with:
           name: react-build
