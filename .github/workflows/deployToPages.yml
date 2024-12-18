@@ -24,7 +24,7 @@ jobs:
       - name: Upload Dependencies
         uses: actions/upload-pages-artifact@v3
         with:
-            name: react-build
+            name: github-pages
             path: ./dist
   deploy:
     needs: test-build
@@ -40,6 +40,6 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           name: react-build
-          artifact-name: react-build
+          artifact-name: github-pages
           path: ./dist
      
