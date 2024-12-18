@@ -21,4 +21,18 @@ jobs:
         run: npm i
       - name: Build Application
         run: npm run build
-      
+      - name: Upload Dependencies
+        uses: actions/upload-artifact@v4
+        with:
+            name: react-build
+            path: ./dist
+  deploy:
+    needs: test-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: react-build
+          path: ./dist
+     
