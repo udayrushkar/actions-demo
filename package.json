@@ -2,6 +2,7 @@
   "name": "example",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://udayrushkar.github.io/actions-demo",
   "type": "module",
   "scripts": {
     "dev": "vite",
