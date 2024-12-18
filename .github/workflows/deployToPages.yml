@@ -23,7 +23,6 @@ jobs:
         run: npm run build
       - name: Upload Dependencies
         uses: actions/upload-pages-artifact@v3
-        id: deployment
         with:
             name: react-build
             path: ./dist
@@ -34,12 +33,11 @@ jobs:
       id-token: write
       pages: write
     environment:
-        name: react-build
+        name: github-pages
         url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploye Artifacts to pages
         uses: actions/deploy-pages@v4
-        id: deployment
         with:
           name: react-build
           path: ./dist
