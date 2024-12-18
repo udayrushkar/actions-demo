@@ -1,4 +1,4 @@
-name: Deploy to Pages
+name: clone_&_build_application;
 on: [workflow_dispatch]
 jobs:
   install-node:
