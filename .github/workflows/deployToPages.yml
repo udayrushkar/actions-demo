@@ -33,7 +33,7 @@ jobs:
       id-token: write
       pages: write
     environment:
-        name: github-pages
+        name: react-build
         url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploye Artifacts to pages
